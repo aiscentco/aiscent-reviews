@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Review AIscent Co. on Google</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Gelasio:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --xo-black: #1A1A1A; --petal: #FFE8F2; --wow: #FF2D7B; --bloom: #FF85B3;
+    --stage: #2A2A2A;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  @media (prefers-color-scheme: light) { :root:not([data-theme="dark"]) { --stage: #E9DDE2; } }
+  :root[data-theme="light"] { --stage: #E9DDE2; }
+  html { scroll-padding-top: env(safe-area-inset-top, 0px); height: 100%; }
+  *, *::before, *::after { box-sizing: border-box; }
+  body { margin: 0; height: 100%; background: var(--stage); font-family: "DM Sans", Arial, sans-serif;
+    display: flex; align-items: center; justify-content: center; }
+
+  .phone { width: 390px; height: 780px; max-height: calc(100% - 32px); border-radius: 48px; overflow: hidden; position: relative;
+    background: var(--xo-black); color: var(--petal); box-shadow: 0 0 0 12px #0E0E0E, 0 40px 80px -30px rgba(0,0,0,.6); }
+  @media (max-width: 500px) { .phone { width: 100%; height: 100%; max-height: none; border-radius: 0; box-shadow: none; } }
+
+  .screen { height: 100%; overflow-y: auto; display: flex; flex-direction: column; align-items: center; text-align: center; padding: 84px 30px 28px; }
+  .event { font-size: 12px; letter-spacing: 2.4px; text-transform: uppercase; color: var(--bloom); margin: 0; }
+  .mark { font-family: Gelasio, Georgia, "Times New Roman", serif; font-weight: 700; font-size: clamp(38px, 12vw, 56px); white-space: nowrap; line-height: 1; margin: 22px 0 0; color: var(--petal); }
+  .mark em { color: var(--wow); }
+  .tagline { font-family: Gelasio, Georgia, serif; font-style: italic; font-size: 18px; color: var(--petal); opacity: .85; margin: 14px 0 0; }
+  .rule { width: 56px; height: 2px; background: var(--bloom); margin: 28px 0 0; border: 0; }
+  .thanks { font-size: 17px; line-height: 1.5; margin: 24px 0 0; max-width: 300px; }
+
+  .middle { margin-top: auto; width: 100%; display: flex; flex-direction: column; align-items: center; gap: 18px; }
+  .stars { display: flex; gap: 8px; }
+  .stars svg { width: 30px; height: 30px; fill: var(--wow); opacity: .22; transform: scale(.85); transition: opacity .25s, transform .25s; }
+  .stars svg.lit { opacity: 1; transform: scale(1); }
+  .status { font-size: 18px; font-weight: 500; margin: 0; min-height: 24px; }
+  .bar { width: 72%; height: 3px; border-radius: 2px; background: rgba(255,232,242,.16); overflow: hidden; }
+  .bar span { display: block; height: 100%; width: 0; background: var(--wow); }
+  .bar.go span { width: 100%; transition: width 1.8s linear; }
+  .btn { margin-top: 6px; display: inline-block; text-decoration: none; background: var(--wow); color: var(--xo-black);
+    font: 700 16px "DM Sans", Arial, sans-serif; padding: 16px 30px; border-radius: 30px; border: 0; cursor: pointer; }
+  .hint { font-size: 13px; color: var(--petal); opacity: .7; margin: 0; }
+  .setup { font-size: 13px; line-height: 1.45; color: var(--xo-black); background: var(--petal); border-radius: 12px; padding: 12px 14px; margin: 0; }
+  .setup[hidden] { display: none; }
+
+  .sign { margin-top: 28px; display: inline-flex; align-items: baseline; gap: 7px; white-space: nowrap; background: var(--xo-black);
+    border: 1px solid rgba(255,232,242,.28); border-radius: 999px; padding: 10px 20px; }
+  .sign .by { font-size: 13px; color: var(--petal); }
+  .sign .m { font-family: Gelasio, Georgia, serif; font-size: 17px; font-weight: 700; color: var(--petal); }
+  .sign em { color: var(--wow); }
+
+  .btn:focus-visible { outline: 3px solid var(--bloom); outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .bar.go span, .stars svg { transition: none; } }
+</style>
+</head>
+<body>
+<main class="phone">
+  <div class="screen">
+    <p class="event">Stockholm Beauty Week</p>
+    <h1 class="mark">AIscent <em>Co.</em></h1>
+    <p class="tagline">From concept to shelf, beautifully fast.</p>
+    <hr class="rule">
+    <p class="thanks">Thank you for stopping by. It would mean a lot if you shared a few words about meeting us.</p>
+
+    <div class="middle">
+      <div class="stars" id="stars" aria-hidden="true"></div>
+      <p class="status" id="status" aria-live="polite">Opening Google reviews…</p>
+      <div class="bar" id="bar"><span></span></div>
+      <a class="btn" id="btn" href="#" target="_blank" rel="noopener">Leave us a Google review</a>
+      <p class="hint" id="hint">Not opening? Tap the button.</p>
+      <p class="setup" id="setup" hidden>Almost live: paste AIscent's Google review link into REVIEW_LINK in this page's code and the tap will open Google's review window.</p>
+    </div>
+
+    <div class="sign" aria-label="Powered by AIscent Co."><span class="by">Powered by</span><span class="m">AIscent <em>Co.</em></span></div>
+  </div>
+</main>
+
+<script>
+/* ===== PASTE AISCENT'S GOOGLE REVIEW LINK HERE =====
+   From Google Business Profile: "Ask for reviews" link (https://g.page/r/.../review)
+   or https://search.google.com/local/writereview?placeid=YOUR_PLACE_ID */
+var REVIEW_LINK = "https://g.page/r/CUxB6Wh57TKrECE/review";
+
+(function () {
+  var STAR = '<svg viewBox="0 0 24 24"><path d="M12 2.5l2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.4l-5.9 3.1 1.2-6.5L2.5 9.4l6.6-.9z"/></svg>';
+  var stars = document.getElementById("stars");
+  stars.innerHTML = STAR.repeat(5);
+  var lit = stars.querySelectorAll("svg");
+  var bar = document.getElementById("bar"), btn = document.getElementById("btn");
+  var live = /^https:\/\//.test(REVIEW_LINK.trim());
+
+  lit.forEach(function (s, i) { setTimeout(function () { s.classList.add("lit"); }, 200 + i * 300); });
+  requestAnimationFrame(function () { bar.classList.add("go"); });
+
+  var framed = false;
+  try { framed = window.self !== window.top; } catch (err) { framed = true; }
+
+  if (live) {
+    btn.href = REVIEW_LINK.trim();
+    if (framed) {
+      // Inside a viewer (like claude.ai) Google refuses to open in the frame,
+      // so stay on the page and let the button open Google in a new tab.
+      setTimeout(function () {
+        document.getElementById("status").textContent = "Tap below to leave your review";
+        document.getElementById("hint").textContent = "Opens Google reviews";
+      }, 1900);
+    } else {
+      setTimeout(function () { window.location.href = REVIEW_LINK.trim(); }, 1800);
+    }
+  } else {
+    btn.addEventListener("click", function (e) { e.preventDefault(); });
+    setTimeout(function () {
+      document.getElementById("status").textContent = "Google review link not added yet";
+      document.getElementById("hint").hidden = true;
+      document.getElementById("setup").hidden = false;
+    }, 1900);
+  }
+})();
+</script>
+</body>
+</html>
