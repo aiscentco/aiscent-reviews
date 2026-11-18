@@ -1,0 +1,14 @@
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+service-account*.json
+*credentials*.json
+secrets.*
+.netlify/
+.DS_Store
+node_modules/
+setup_protection.sh
